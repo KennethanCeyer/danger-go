@@ -1,8 +1,8 @@
 <h1 align="center">danger-go</h1>
 <p align="center">
     <a href="https://travis-ci.com/KennethanCeyer/danger-go" target="_blank"><img src="https://travis-ci.com/KennethanCeyer/danger-go.svg?branch=master" alt="Build Status"></a>
-    <a href="https://github.com/KennethanCeyer/danger-go/blob/master/LICENSE" target="_blank"><img src="http://img.shields.io/badge/license-MIT-green.svg?style=flat" alt="License"></a>
     <a href="http://rubygems.org/gems/danger-go" target="_blank"><img src="https://img.shields.io/gem/v/danger-go.svg?style=flat" alt="License"></a>
+    <a href="https://github.com/KennethanCeyer/danger-go/blob/master/LICENSE" target="_blank"><img src="http://img.shields.io/badge/license-MIT-green.svg?style=flat" alt="License"></a>
 </p>
 <p align="center">A Dangerfile for golang developer (golint)</p>
 <p align="center"><img src="./docs/images/gopher.png"></p>
