@@ -66,7 +66,7 @@ module Danger
     #
     # @return [Output]
     def run_lint(bin, dir)
-      `#{bin} #{dir}`.split('\n')
+      `#{bin} #{dir}`.split("\n")
     end
 
     # Print markdown string

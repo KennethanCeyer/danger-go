@@ -48,20 +48,25 @@ module Danger
 
         context 'when running on github' do
           it 'handles a lint with errors count greater than threshold' do
-            lint_report = 'test.go:213:3: don\'t use underscores in Go names; var my_var should be myVar\n'
+            lint_report = "test.go:213:3: don't use underscores in Go names; var my_var should be myVar\n" \
+              "test.go:217:3: var testUrl should be testUrl\n"
 
             allow(@golint).to receive(:`).with('golint .').and_return(lint_report)
             allow(@dangerfile.danger).to receive(:scm_provider).and_return('github')
             allow(@dangerfile.github).to receive(:html_link)
               .with('test.go#L213', full_path: false)
               .and_return('fake_link_to:test.go#L213')
+            allow(@dangerfile.github).to receive(:html_link)
+              .with('test.go#L217', full_path: false)
+              .and_return('fake_link_to:test.go#L217')
 
             @golint.lint
 
             markdown = @golint.status_report[:markdowns].first
             expect(markdown.message).to include('## DangerGo found issues')
-            expect(markdown.message).to include('| fake_link_to:test.go#L213 | 213 | 3 | ' \
-            'don`t use underscores in Go names; var my_var should be myVar |')
+            expect(markdown.message).to include("| fake_link_to:test.go#L213 | 213 | 3 | " \
+              "don`t use underscores in Go names; var my_var should be myVar |\n" \
+              "| fake_link_to:test.go#L217 | 217 | 3 | var testUrl should be testUrl |")
           end
         end
       end
