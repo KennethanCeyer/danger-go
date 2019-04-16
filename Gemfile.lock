@@ -129,7 +129,7 @@ DEPENDENCIES
   guard-rspec (~> 4.7)
   listen (= 3.0.7)
   pry (~> 0.10)
-  rake (~> 10.0)
+  rake
   rspec (~> 3.4)
   rubocop (~> 0.49.0)
   yard (~> 0.9.11)
