@@ -1,10 +1,10 @@
 <h1 align="center">danger-go</h1>
 <p align="center">
-    <a href="#" target="_blank"><img src="https://github.com/orta/danger/blob/master/LICENSE" alt="License"></a>
+    <a href="https://github.com/KennethanCeyer/danger-go/blob/master/LICENSE" target="_blank"><img src="http://img.shields.io/badge/license-MIT-green.svg?style=flat" alt="License"></a>
+    <a href="http://rubygems.org/gems/danger-go" target="_blank"><img src="https://img.shields.io/gem/v/danger-go.svg?style=flat" alt="License"></a>
 </p>
 <p align="center">A Dangerfile for golang developer (golint)</p>
 <p><img src="./docs/images/gopher.png"></p>
-[![Gem](https://img.shields.io/gem/v/danger.svg?style=flat)](http://rubygems.org/gems/danger)
 
 ## Getting Started
 
