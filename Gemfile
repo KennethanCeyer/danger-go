@@ -6,7 +6,7 @@ source "https://rubygems.org"
 gemspec
 
 gem "bundler"
-gem "rake"
+gem "rake", "~> 10.0"
 gem "guard", "~> 2.14"
 gem "guard-rspec", "~> 4.7"
 gem "listen", "3.0.7"
