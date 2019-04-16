@@ -16,9 +16,9 @@ module Danger
     attr_writer :base_dir
 
     MARKDOWN_TEMPLATE = \
-      '## DangerGo found issues\n\n'\
-      '| File | Line | Column | Reason |\n'\
-      '|------|------|--------|--------|\n'.freeze
+      "## DangerGo found issues\n\n"\
+      "| File | Line | Column | Reason |\n"\
+      "|------|------|--------|--------|\n".freeze
 
     def base_dir
       @base_dir || '.'
@@ -75,9 +75,10 @@ module Danger
     #
     # @return  [string]
     def print_markdown_table(errors=[])
-      report = errors.inject(MARKDOWN_TEMPLATE) do |out, error_line|
+      report = errors.inject(MARKDOWN_TEMPLATE) do |out_line, error_line|
         file, line, column, reason = error_line.split(':')
-        out + "| #{short_link(file, line)} | #{line} | #{column} | #{reason.strip.tr('\'', '`')} |\n"
+        out_line += "| #{short_link(file, line)} | #{line} | #{column} | #{reason.strip.tr('\'', '`')} |\n"
+        out_line
       end
 
       markdown(report)
