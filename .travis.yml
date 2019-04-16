@@ -11,6 +11,7 @@ bundler_args: "--without documentation --path bundle"
 
 install:
   - gem install bundler -v '2.0.1'
+  - bundle install
 
 after_install:
   - rake install
