@@ -5,7 +5,7 @@
     <a href="https://github.com/KennethanCeyer/danger-go/blob/master/LICENSE" target="_blank"><img src="http://img.shields.io/badge/license-MIT-green.svg?style=flat" alt="License"></a>
 </p>
 <p align="center">A Dangerfile for golang developer (golint)</p>
-<p align="center"><img src="./docs/images/gopher.png"></p>
+<p align="center"><img width="310" src="./docs/images/gopher.png"></p>
 
 ## Getting Started
 
