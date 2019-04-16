@@ -1,6 +1,3 @@
-require 'mkmf'
-require 'json'
-
 module Danger
   # Lint javascript files using [golint](http://golint.org/).
   # Results are send as inline commen.
