@@ -16,3 +16,6 @@
 
 # Gem file
 *.gem
+
+# Rake
+pkg/
