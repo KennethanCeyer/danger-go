@@ -4,7 +4,7 @@
     <a href="http://rubygems.org/gems/danger-go" target="_blank"><img src="https://img.shields.io/gem/v/danger-go.svg?style=flat" alt="License"></a>
 </p>
 <p align="center">A Dangerfile for golang developer (golint)</p>
-<p><img src="./docs/images/gopher.png"></p>
+<p align="center"><img src="./docs/images/gopher.png"></p>
 
 ## Getting Started
 
