@@ -1,0 +1,22 @@
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'log/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'Guardfile'
+  DisplayCopNames: true
+
+Metrics/LineLength:
+  Max: 120
+
+SpaceAroundEqualsInParameterDefault:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
+    - 'test/**/*.rb'

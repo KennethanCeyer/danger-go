@@ -18,13 +18,13 @@ module Danger
     # @return [String]
     attr_writer :base_dir
 
-    MARKDOWN_TEMPLATE = ""\
-      "## DangerGo found issues\n\n"\
-      "| File | Line | Column | Reason |\n"\
-      "|------|------|--------|--------|\n"\
+    MARKDOWN_TEMPLATE = \
+      '## DangerGo found issues\n\n'\
+      '| File | Line | Column | Reason |\n'\
+      '|------|------|--------|--------|\n'.freeze
 
     def base_dir
-      @base_dir || "."
+      @base_dir || '.'
     end
 
     # Lints go files.
@@ -34,7 +34,7 @@ module Danger
     # @return  [void]
     #
     def lint
-      errors = lint_results.reject { |r| r.nil? }
+      errors = lint_results.reject(&:nil?)
 
       return if errors.empty?
 
@@ -56,7 +56,7 @@ module Danger
     def lint_results
       bin = 'golint'
       system 'go get -u golang.org/x/lint/golint' unless golint_installed?
-      return run_lint(bin, base_dir)
+      run_lint(bin, base_dir)
     end
 
     # Run golint aginst a single dir.
@@ -69,8 +69,7 @@ module Danger
     #
     # @return [Output]
     def run_lint(bin, dir)
-      command = "#{bin}"
-      `#{command} #{dir}`.split('\n')
+      `#{bin} #{dir}`.split('\n')
     end
 
     # Print markdown string
@@ -80,15 +79,15 @@ module Danger
     # @return  [string]
     def print_markdown_table(errors=[])
       report = errors.inject(MARKDOWN_TEMPLATE) do |out, error_line|
-        file, line, column, reason = error_line.split(":")
-        out += "| #{short_link(file, line)} | #{line} | #{column} | #{reason.strip.gsub("'", "`")} |\n"
+        file, line, column, reason = error_line.split(':')
+        out + "| #{short_link(file, line)} | #{line} | #{column} | #{reason.strip.tr('\'', '`')} |\n"
       end
 
       markdown(report)
     end
 
     def short_link(file, line)
-      if danger.scm_provider.to_s == "github"
+      if danger.scm_provider.to_s == 'github'
         return github.html_link("#{file}#L#{line}", full_path: false)
       end
 
