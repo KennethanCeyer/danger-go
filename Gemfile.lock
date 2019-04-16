@@ -122,12 +122,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.3)
+  bundler
   danger-go!
   guard (~> 2.14)
   guard-rspec (~> 4.7)
   listen (= 3.0.7)
-  pry
+  pry (~> 0.10)
   rake (~> 10.0)
   rspec (~> 3.4)
   rubocop (~> 0.49.0)
