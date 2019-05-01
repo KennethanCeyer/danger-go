@@ -9,6 +9,10 @@
 
 ## Getting Started
 
+### Demo
+
+![DEMO](./docs/images/demo.png)
+
 ### Installation
 
 ```bash
@@ -70,6 +74,7 @@ $ bundle exec rake spec
 ```bash
 $ bundle exec guard
 ```
+
 
 ## License
 
